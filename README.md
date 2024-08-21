@@ -1,2 +1,3 @@
 # Halo
-a library that packages Opengl, glfw, and glad to make graphics easier
+a library that packages Raylib/Rlgl for graphics experimentation.
+
