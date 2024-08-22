@@ -1,18 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "libs/headers/raylib/rlgl.h"
 
-/* TODO:
-    
-    [1]:
-    
-    [2]:
-    
-    [3]:
-    
-    [4]:
-    
- */
 
 
 int main(){
+
+
+    printf("Hello World!\n");
 
     return 0;
 }
