@@ -64,7 +64,7 @@ local Build = {
     
     -- VVV Used to build the binary.
     Make = function (self, main)
-        os.execute(self.compiler .. " -o " .. self.export .. self.name .. " " .. main .. " " .. self.sources .. " -L" .. self.librarys .. self.misc) 
+        os.execute(self.compiler .. " -o " .. self.export .. self.name .. " -Wall " .. main .. " -static " .. self.sources .. " -L" .. self.librarys .. self.misc) 
     end,
 }
 

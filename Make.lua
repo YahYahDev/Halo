@@ -20,6 +20,7 @@ Windows:SetCompiler(MINGW)
 Windows:SetExportPath("bin/windows/")
 Windows:AddLibrarys("src/libs/windows") 
 Windows:AddSourcesList("src/modules/*/*.c")
+Windows:SetMisc("-lraylib -lopengl32 -lgdi32 -lwinmm")
 Windows:Make("src/main.c")
 
 
