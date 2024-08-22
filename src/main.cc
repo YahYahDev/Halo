@@ -6,13 +6,13 @@
 #include "libs/headers/raylib/raylib.h"
 #include "libs/headers/raylib/rlgl.h"
 #include "libs/headers/raylib/raymath.h"
-#include "common.h"
+#include "common.hh"
 
 
 
 
 void StartLoop() {
-    
+
     BeginDrawing();
     ClearBackground(GetColor(0x181818));
 }
