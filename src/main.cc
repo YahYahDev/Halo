@@ -8,28 +8,11 @@
 #include "libs/headers/raylib/raymath.h"
 #include "common.hh"
 
-#include "modules/render/render.hh"
-
-
-void StartLoop() {
-
-    BeginDrawing();
-    ClearBackground(GetColor(0x181818));
-}
-
-
-void EndLoop() {
-
-    EndDrawing();
-    
-}
-
 
 void Render() {
 
-    rlBegin(RL_TRIANGLES);    
-    
-    rlEnd();
+
+
 }
 
 
@@ -42,15 +25,12 @@ int main(){
     SetTargetFPS(60);
     
     while(!WindowShouldClose()) {
-    
-        StartLoop(); // Start the loop.
+        BeginDrawing();
+        ClearBackground(GetColor(0x181818));
         
-    
-        // Render();
-    
-        MakeCube();
-    
-        EndLoop(); // End the loop, deinitalize drawing calls ect.
+        Render();
+        
+        EndDrawing();
     
     
     }
