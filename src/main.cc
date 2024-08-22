@@ -8,7 +8,7 @@
 #include "libs/headers/raylib/raymath.h"
 #include "common.hh"
 
-
+#include "modules/render/render.hh"
 
 
 void StartLoop() {
@@ -46,8 +46,9 @@ int main(){
         StartLoop(); // Start the loop.
         
     
-        Render();
+        // Render();
     
+        MakeCube();
     
         EndLoop(); // End the loop, deinitalize drawing calls ect.
     
