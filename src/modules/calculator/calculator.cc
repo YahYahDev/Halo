@@ -1,6 +1,14 @@
 #include "calculator.hh"
 
+// Get raylib header.
 #include "../../libs/headers/raylib/raylib.h"
+
+// Define RAYGUI so that we can use raygui.
+#define RAYGUI_IMPLEMENTATION
+
+// Get raygui header.
+#include "../../libs/headers/raylib/raygui.h"
+
 
 // VVV This function is used to initalize values of a 'Calculator' object.
 Calculator::Calculator(){
@@ -9,5 +17,6 @@ Calculator::Calculator(){
 
 // VVV This function is used to run the gui.
 void Calculator::RenderGui(){
-    DrawCube((Vector3){0.0, 0.0, 0.0}, 5.0, 5.0, 5.0, (Color){55, 255, 55, 255});
+
+    
 }

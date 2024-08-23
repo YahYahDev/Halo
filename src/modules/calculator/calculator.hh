@@ -21,15 +21,18 @@
 
 class Calculator{
 
-    private: // Put internal state in private.
+    // Put internal state in private.
+    private:
 
-
-    public: // Put what you want exposed in public.
+    // Put what you want exposed in public.
+    public:
     
-    Calculator(); // Define the constructor for class.
+    // Define the constructor for class.
+    Calculator();
 
-    
+    // Define the 'RenderGui' function so we can render the gui for the calculator.
     void RenderGui();
+    
     
 };
 

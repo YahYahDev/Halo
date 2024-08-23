@@ -34,7 +34,7 @@ int main(){
         // VVV Initalize start of drawing calls.
         BeginDrawing();
         BeginMode3D(camera);
-        ClearBackground(GetColor(0x181818));
+        ClearBackground(RAYWHITE);
         
         // VVV Execute 'Calc.RenderGui()'.
         Calc.RenderGui();
