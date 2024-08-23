@@ -57,7 +57,7 @@ Calculator::Calculator(){
 
 void Calculator::Run(Camera2D cam){
 
-    Button test(10, 10, 10, 10, "Test", GetColor(0x1f1f1f), RAYWHITE);
+    Button test(10, 10, 10, 10, "Test", (Color){255, 55, 55, 255}, RAYWHITE);
     
     while(!WindowShouldClose()) {
     
