@@ -1,6 +1,8 @@
 #ifndef CALCULATOR_MODULE
 #define CALCULATOR_MODULE
 
+#include "../../libs/headers/raylib/raylib.h"
+
 /*  TODO:
     
     [BACK END]:
@@ -24,14 +26,18 @@ class Calculator{
     // Put internal state in private.
     private:
 
+    Camera2D camera;
+    
+    
+    
     // Put what you want exposed in public.
     public:
     
     // Define the constructor for class.
     Calculator();
 
-    // Define the 'RenderGui' function so we can render the gui for the calculator.
-    void RenderGui();
+    // Define run functions.
+    void Run(Camera2D cam);
     
     
 };
