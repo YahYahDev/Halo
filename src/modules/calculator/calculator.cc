@@ -27,19 +27,21 @@ class Button{
         Vector2 MousePos = GetMousePosition();
         if(MousePos.x <= x + width && MousePos.x >= x){
             if(MousePos.y <= y + height && MousePos.y >= y){
-            buffercolor = RAYWHITE;
             return true;
             } else {
-                buffercolor = defaultcolor;
                 return false;
             }
         } else {
-            buffercolor = defaultcolor;
             return false;
         }
         return false;
     }
+    
+    
+    void SetColor(Color color) {buffercolor = color;}
 
+    
+    void ResetColor(void) {buffercolor = defaultcolor;}
 };
 
 
@@ -56,8 +58,8 @@ Calculator::Calculator(){
 
 
 void Calculator::Run(Camera2D cam){
-
-    Button test(10, 10, 10, 10, "Test", (Color){255, 55, 55, 255}, RAYWHITE);
+    
+    Button Num1(25, 25, 75, 75, "Test", (Color){255, 55, 55, 255}, RAYWHITE);
     
     while(!WindowShouldClose()) {
     
@@ -66,9 +68,13 @@ void Calculator::Run(Camera2D cam){
         
         BeginMode2D(cam);
         
-        if(test.Active()){
-            
-            
+        // VVV sees if button is being hovered over and if left click is being held.
+        if(Num1.Active() && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
+            // Set the button color.
+            Num1.SetColor((Color){55, 255, 55, 255});
+        } else {
+            // Reset the button color.
+            Num1.ResetColor();
         }
     
         EndMode2D();
