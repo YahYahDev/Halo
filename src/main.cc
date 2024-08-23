@@ -18,7 +18,7 @@ int main(){
     Camera2D camera = {0};
     
     camera.target = (Vector2){0.0, 0.0};
-    camera.offset = (Vector2){256.0, 256.0};
+    camera.offset = (Vector2){0.0, 0.0};
     camera.zoom = 1.0;
     camera.rotation = 0.0;
     
