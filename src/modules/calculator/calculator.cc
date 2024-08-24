@@ -26,7 +26,7 @@ class Button{
         defaultcolor.b;
         defaultcolor.a;
         
-        buffercolor = (Color){defaultcolor.r - 50, defaultcolor.g - 50, defaultcolor.b - 50, defaultcolor.a};
+        buffercolor = (Color){defaultcolor.r - 25, defaultcolor.g - 25, defaultcolor.b - 25, defaultcolor.a};
         
     }
     
