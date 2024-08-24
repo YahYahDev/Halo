@@ -1,5 +1,16 @@
 #include "calculator.hh"
 
+/*  TODO:
+
+    1): Make buttons have a call back functions for when they are clicked.
+    
+    2): Make buttons color get darker when they are hovered over.
+    
+    3): Make buttons have a default texture to look better.
+
+
+*/
+
 class Button{
 
     private:
@@ -45,16 +56,17 @@ class Button{
 };
 
 
-// VVV This function is used to initalize values of a 'Calculator' object.
-Calculator::Calculator(){
-
-    Camera2D camera = {0};
-    camera.target = (Vector2){256.0f ,256.0f};
-    camera.offset = (Vector2){256.0f ,256.0f};
-    camera.zoom = 1.0f;
-    camera.rotation = 0.0f;
+/* TODO:
     
-}
+    1): Make a keypad of numbers for the calculator to use for input/output.
+    
+    2): ???
+
+*/
+
+
+// VVV This function is used to initalize values of a 'Calculator' object.
+Calculator::Calculator(){}
 
 
 void Calculator::Run(Camera2D cam){
