@@ -8,12 +8,28 @@
     
     3): Make buttons have a default texture to look better.
 
-
+    4): Make buttons have text drawn on them.
+    
 */
 
 class Button{
 
     private:
+    
+    // Used to set the color of the button when its being hovered over.
+    void SetHoverColor(){
+        
+        Color TEMP;
+
+        defaultcolor.r;
+        defaultcolor.g;
+        defaultcolor.b;
+        defaultcolor.a;
+        
+        buffercolor = (Color){defaultcolor.r - 50, defaultcolor.g - 50, defaultcolor.b - 50, defaultcolor.a};
+        
+    }
+    
     
     int x;
     int y; 
@@ -23,6 +39,8 @@ class Button{
     Color buffercolor;
     const char* text;
     Color textcolor;
+    
+    
     public:
     
     Button(int x, int y, int width, int height, const char* text, Color defaultcolor, Color textcolor)
@@ -38,13 +56,26 @@ class Button{
         Vector2 MousePos = GetMousePosition();
         if(MousePos.x <= x + width && MousePos.x >= x){
             if(MousePos.y <= y + height && MousePos.y >= y){
+            
+            SetHoverColor();
+            
             return true;
+            
             } else {
+            
+                ResetColor();
+            
                 return false;
             }
         } else {
+        
+            ResetColor();
+            
             return false;
         }
+        
+        ResetColor();
+        
         return false;
     }
     
@@ -54,6 +85,8 @@ class Button{
     
     void ResetColor(void) {buffercolor = defaultcolor;}
 };
+
+
 
 
 /* TODO:
@@ -71,7 +104,7 @@ Calculator::Calculator(){}
 
 void Calculator::Run(Camera2D cam){
     
-    Button Num1(25, 25, 75, 75, "Test", (Color){255, 55, 55, 255}, RAYWHITE);
+    Button Num1(25, 25, 75, 75, "Test", (Color){55, 55, 150, 255}, RAYWHITE);
     
     while(!WindowShouldClose()) {
     
@@ -81,17 +114,11 @@ void Calculator::Run(Camera2D cam){
         BeginMode2D(cam);
         
         // VVV sees if button is being hovered over and if left click is being held.
-        if(Num1.Active() && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
-            // Set the button color.
-            Num1.SetColor((Color){55, 255, 55, 255});
-        } else {
-            // Reset the button color.
-            Num1.ResetColor();
-        }
+        if(Num1.Active() && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){}
     
-        EndMode2D();
         
-        DrawText("Hello", 10, 10, 14, RAYWHITE);
+        // VVV End drawing calls.
+        EndMode2D();
         EndDrawing();
         
     }
