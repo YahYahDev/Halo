@@ -9,6 +9,7 @@
     
 */
 
+
 class Button{
 
     private:
@@ -103,6 +104,13 @@ class Button{
 Calculator::Calculator(){}
 
 
+// Takes button and assigns a function to call if it is pressed.
+#define HandleButtonPress(button, action) \
+        if(button.Active() and IsMouseButtonDown(MOUSE_BUTTON_LEFT)) { \
+            action; \
+        }\
+
+
 void Calculator::Run(Camera2D cam){
 
     
@@ -117,10 +125,8 @@ void Calculator::Run(Camera2D cam){
         BeginMode2D(cam);
         
         // VVV sees if button is being hovered over and if left click is being held.
-        if(Num1.Active() && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
+        HandleButtonPress(Num1, Num1.SetColor((Color){255, 55, 255, 255}));
         
-        }
-    
         
         // VVV End drawing calls.
         EndMode2D();
