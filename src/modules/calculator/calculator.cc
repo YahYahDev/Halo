@@ -2,13 +2,10 @@
 
 /*  TODO:
 
-    1): Make buttons have a call back functions for when they are clicked.
     
-    2): Make buttons color get darker when they are hovered over.
-    
-    3): Make buttons have a default texture to look better.
+    1): Make buttons have a default texture to look better.
 
-    4): Make buttons have text drawn on them.
+    2): Make buttons have text drawn on them.
     
 */
 
@@ -19,32 +16,33 @@ class Button{
     // Used to set the color of the button when its being hovered over.
     void SetHoverColor(){
         
-        Color TEMP;
-
-        defaultcolor.r;
-        defaultcolor.g;
-        defaultcolor.b;
-        defaultcolor.a;
-        
         buffercolor = (Color){defaultcolor.r - 25, defaultcolor.g - 25, defaultcolor.b - 25, defaultcolor.a};
         
     }
     
-    
+    // VVV Used to define the location/size of the button.
     int x;
     int y; 
     int width;
     int height;
+    
+    // VVV Used as default color for button.
     Color defaultcolor;
-    Color buffercolor;
+    
+    // VVV Text configuration for display on the button.
     const char* text;
     Color textcolor;
+    int textsize;
+    
+    // VVV These are used as the active color for the button.
+    Color buffercolor;
+    Color buffertextcolor;
     
     
     public:
     
-    Button(int x, int y, int width, int height, const char* text, Color defaultcolor, Color textcolor)
-    : x(x), y(y), width(width), height(height), text(text), defaultcolor(defaultcolor), textcolor(textcolor){}
+    Button(int x, int y, int width, int height, const char* text, Color defaultcolor, Color textcolor, int textsize)
+    : x(x), y(y), width(width), height(height), text(text), defaultcolor(defaultcolor), textcolor(textcolor), textsize(textsize){}
     
     
     bool Active(){
@@ -53,9 +51,12 @@ class Button{
             returns false.
         */
         DrawRectangle(x, y, width, height, buffercolor);
+        
+        // VVV Draw text to put on the button.
+        DrawText(text, x + 10, y + 10, textsize, textcolor);
         Vector2 MousePos = GetMousePosition();
-        if(MousePos.x <= x + width && MousePos.x >= x){
-            if(MousePos.y <= y + height && MousePos.y >= y){
+        if(MousePos.x <= x + width and MousePos.x >= x){
+            if(MousePos.y <= y + height and MousePos.y >= y){
             
             SetHoverColor();
             
@@ -103,8 +104,10 @@ Calculator::Calculator(){}
 
 
 void Calculator::Run(Camera2D cam){
+
     
-    Button Num1(25, 25, 75, 75, "Test", (Color){55, 55, 150, 255}, RAYWHITE);
+    Button Num1(25, 25, 75, 75, "Test", (Color){55, 55, 150, 255}, RAYWHITE, 10);
+
     
     while(!WindowShouldClose()) {
     
@@ -114,7 +117,9 @@ void Calculator::Run(Camera2D cam){
         BeginMode2D(cam);
         
         // VVV sees if button is being hovered over and if left click is being held.
-        if(Num1.Active() && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){}
+        if(Num1.Active() && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
+        
+        }
     
         
         // VVV End drawing calls.
