@@ -1,8 +1,7 @@
-#include "../stack/stack.h"
+// #include "../stack/stack.h"
 
 #include "calculator.hh"
 
-GENERATE_TYPEOF_STACK(int);
 
 /*  TODO:
 
