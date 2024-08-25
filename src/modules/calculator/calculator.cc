@@ -1,5 +1,8 @@
+#include "../stack/stack.h"
+
 #include "calculator.hh"
 
+GENERATE_TYPEOF_STACK(int);
 
 /*  TODO:
 
@@ -136,3 +139,5 @@ void Calculator::Run(Camera2D cam){
     }
 
 }
+
+#undef HandleButtonPress
